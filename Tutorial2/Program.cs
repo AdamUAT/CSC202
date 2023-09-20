@@ -30,7 +30,7 @@ namespace Tutorial2
         /// <summary>
         /// The ideal aspect ratio of the program. Width:Height
         /// </summary>
-        public const float ASPECT_RATIO = 16 / 9;
+        public const float ASPECT_RATIO = 16.0f / 9.0f;
 
         
     }
