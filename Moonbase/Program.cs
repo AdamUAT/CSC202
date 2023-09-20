@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tutorial2
+namespace Moonbase
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Tutorial2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormMain());
         }
 
         //Windowed: Adjustable window size, will not deform.
@@ -31,7 +31,5 @@ namespace Tutorial2
         /// The ideal aspect ratio of the program. Width:Height
         /// </summary>
         public const float ASPECT_RATIO = 16.0f / 9.0f;
-
-        
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Tutorial2
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Tutorial2
 {
     partial class Form1
     {
@@ -33,12 +36,22 @@
             this.Button_Fullscreen = new System.Windows.Forms.RadioButton();
             this.Button_Widescreen = new System.Windows.Forms.RadioButton();
             this.ApplicationMode = new System.Windows.Forms.GroupBox();
+            this.MainBackground = new System.Windows.Forms.PictureBox();
+            this.ContentPanel.SuspendLayout();
             this.ApplicationMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Controls.Add(this.MainBackground);
+            this.ContentPanel.Location = new System.Drawing.Point(0, 21);
+            this.ContentPanel.Size = new System.Drawing.Size(842, 473);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(162, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -92,19 +105,34 @@
             this.ApplicationMode.TabStop = false;
             this.ApplicationMode.Text = "Application Mode";
             // 
+            // MainBackground
+            // 
+            this.MainBackground.Image = global::Tutorial2.Properties.Resources.Background;
+            this.MainBackground.Location = new System.Drawing.Point(0, 0);
+            this.MainBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainBackground.Name = "MainBackground";
+            this.MainBackground.Size = new System.Drawing.Size(1, 1);
+            this.MainBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MainBackground.TabIndex = 5;
+            this.MainBackground.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(826, 477);
             this.Controls.Add(this.ApplicationMode);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.Controls.SetChildIndex(this.ContentPanel, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.ApplicationMode, 0);
+            this.ContentPanel.ResumeLayout(false);
             this.ApplicationMode.ResumeLayout(false);
             this.ApplicationMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +145,7 @@
         private System.Windows.Forms.RadioButton Button_Fullscreen;
         private System.Windows.Forms.RadioButton Button_Widescreen;
         private System.Windows.Forms.GroupBox ApplicationMode;
+        private PictureBox MainBackground;
     }
 }
 

@@ -8,27 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tutorial2
+namespace Moonbase
 {
-    public partial class Form1 : AdjustableForm
+    public partial class FormMain : AdjustableForm
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             AdjustWindowSize();
         }
 
-        protected override void OnResize(object sender, EventArgs e)
+        /// <summary>
+        /// Adjusts all UI elements of this form
+        /// </summary>
+        protected override void OnResize()
         {
-            base.OnResize(sender, e);
+            base.OnResize();
 
+            //Set the background image scale for this form
             this.MainBackground.Size = new Size(this.ContentPanel.Width, this.ContentPanel.Height);
         }
 
+        #region AdjustableForm radio buttons
         private void Button_Windowed_CheckedChanged(object sender, EventArgs e)
         {
             //Make sure the button is not being unchecked
-            if(Button_Windowed.Checked)
+            if (Button_Windowed.Checked)
             {
                 //Tell the program all future forms should be windowed
                 Program._windowMode = Program.WindowMode.Windowed;
@@ -63,5 +68,6 @@ namespace Tutorial2
                 AdjustWindowSize();
             }
         }
+        #endregion AdjustableForm radio buttons
     }
 }
