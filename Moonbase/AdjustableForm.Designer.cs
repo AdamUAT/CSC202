@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Tutorial2
+namespace Moonbase
 {
     partial class AdjustableForm
     {
@@ -30,27 +30,27 @@ namespace Tutorial2
         /// </summary>
         private void InitializeComponent()
         {
-            this.Background = new System.Windows.Forms.PictureBox();
             this.ContentPanel = new System.Windows.Forms.Panel();
+            this.Background = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Background
-            // 
-            this.Background.Location = new System.Drawing.Point(0, 0);
-            this.Background.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(75, 41);
-            this.Background.TabIndex = 0;
-            this.Background.TabStop = false;
             // 
             // ContentPanel
             // 
             this.ContentPanel.Location = new System.Drawing.Point(222, 134);
-            this.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(206, 81);
             this.ContentPanel.TabIndex = 1;
+            // 
+            // Background
+            // 
+            this.Background.Location = new System.Drawing.Point(0, 0);
+            this.Background.Margin = new System.Windows.Forms.Padding(2);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(75, 41);
+            this.Background.TabIndex = 0;
+            this.Background.TabStop = false;
             // 
             // AdjustableForm
             // 
@@ -59,7 +59,7 @@ namespace Tutorial2
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.Background);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdjustableForm";
             this.Text = "AdjustableForm";
             ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();

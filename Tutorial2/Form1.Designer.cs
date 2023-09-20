@@ -45,27 +45,25 @@ namespace Tutorial2
             // ContentPanel
             // 
             this.ContentPanel.Controls.Add(this.MainBackground);
-            this.ContentPanel.Location = new System.Drawing.Point(0, 2);
-            this.ContentPanel.Size = new System.Drawing.Size(1119, 629);
+            this.ContentPanel.Location = new System.Drawing.Point(0, 21);
+            this.ContentPanel.Size = new System.Drawing.Size(842, 473);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(216, 116);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(162, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // Button_Windowed
             // 
             this.Button_Windowed.AutoSize = true;
-            this.Button_Windowed.Location = new System.Drawing.Point(8, 23);
-            this.Button_Windowed.Margin = new System.Windows.Forms.Padding(4);
+            this.Button_Windowed.Location = new System.Drawing.Point(6, 19);
             this.Button_Windowed.Name = "Button_Windowed";
-            this.Button_Windowed.Size = new System.Drawing.Size(92, 20);
+            this.Button_Windowed.Size = new System.Drawing.Size(76, 17);
             this.Button_Windowed.TabIndex = 1;
             this.Button_Windowed.Text = "Windowed";
             this.Button_Windowed.UseVisualStyleBackColor = true;
@@ -75,10 +73,9 @@ namespace Tutorial2
             // 
             this.Button_Fullscreen.AutoSize = true;
             this.Button_Fullscreen.Checked = true;
-            this.Button_Fullscreen.Location = new System.Drawing.Point(8, 52);
-            this.Button_Fullscreen.Margin = new System.Windows.Forms.Padding(4);
+            this.Button_Fullscreen.Location = new System.Drawing.Point(6, 42);
             this.Button_Fullscreen.Name = "Button_Fullscreen";
-            this.Button_Fullscreen.Size = new System.Drawing.Size(90, 20);
+            this.Button_Fullscreen.Size = new System.Drawing.Size(73, 17);
             this.Button_Fullscreen.TabIndex = 2;
             this.Button_Fullscreen.TabStop = true;
             this.Button_Fullscreen.Text = "Fullscreen";
@@ -88,10 +85,9 @@ namespace Tutorial2
             // Button_Widescreen
             // 
             this.Button_Widescreen.AutoSize = true;
-            this.Button_Widescreen.Location = new System.Drawing.Point(8, 80);
-            this.Button_Widescreen.Margin = new System.Windows.Forms.Padding(4);
+            this.Button_Widescreen.Location = new System.Drawing.Point(6, 65);
             this.Button_Widescreen.Name = "Button_Widescreen";
-            this.Button_Widescreen.Size = new System.Drawing.Size(101, 20);
+            this.Button_Widescreen.Size = new System.Drawing.Size(82, 17);
             this.Button_Widescreen.TabIndex = 3;
             this.Button_Widescreen.Text = "Widescreen";
             this.Button_Widescreen.UseVisualStyleBackColor = true;
@@ -102,11 +98,9 @@ namespace Tutorial2
             this.ApplicationMode.Controls.Add(this.Button_Windowed);
             this.ApplicationMode.Controls.Add(this.Button_Widescreen);
             this.ApplicationMode.Controls.Add(this.Button_Fullscreen);
-            this.ApplicationMode.Location = new System.Drawing.Point(676, 162);
-            this.ApplicationMode.Margin = new System.Windows.Forms.Padding(4);
+            this.ApplicationMode.Location = new System.Drawing.Point(507, 132);
             this.ApplicationMode.Name = "ApplicationMode";
-            this.ApplicationMode.Padding = new System.Windows.Forms.Padding(4);
-            this.ApplicationMode.Size = new System.Drawing.Size(267, 124);
+            this.ApplicationMode.Size = new System.Drawing.Size(200, 101);
             this.ApplicationMode.TabIndex = 4;
             this.ApplicationMode.TabStop = false;
             this.ApplicationMode.Text = "Application Mode";
@@ -115,6 +109,7 @@ namespace Tutorial2
             // 
             this.MainBackground.Image = global::Tutorial2.Properties.Resources.Background;
             this.MainBackground.Location = new System.Drawing.Point(0, 0);
+            this.MainBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MainBackground.Name = "MainBackground";
             this.MainBackground.Size = new System.Drawing.Size(1, 1);
             this.MainBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,12 +118,12 @@ namespace Tutorial2
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 587);
+            this.ClientSize = new System.Drawing.Size(826, 477);
             this.Controls.Add(this.ApplicationMode);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Controls.SetChildIndex(this.ContentPanel, 0);
