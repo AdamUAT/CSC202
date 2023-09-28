@@ -91,7 +91,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Graphics\Admin.png" />
+    <Content Include="Graphics\Airlock.png" />
+    <Content Include="Graphics\Cabin.png" />
+    <Content Include="Graphics\Maintenance.png" />
     <Content Include="Graphics\Moonbase.jpg" />
+    <Content Include="Graphics\Transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

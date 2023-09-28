@@ -12,10 +12,18 @@ namespace Moonbase
 {
     public partial class FormMain : AdjustableForm
     {
+        //Holds all possible location the player can be in.
+        private enum Locations { Admin, Maintenance, Docs, House };
+        private Locations currentLocation = Locations.Admin;
+
+
         public FormMain()
         {
             InitializeComponent();
             AdjustWindowSize();
+
+            //Must assign delegates for the info window pages because the chagnge to size is not immediately made. 
+            PersonalNavDevicePage.Resize += new System.EventHandler(OnInfoResize);
         }
 
         /// <summary>
@@ -27,6 +35,23 @@ namespace Moonbase
 
             //Set the background image scale for this form
             this.MainBackground.Size = new Size(this.ContentPanel.Width, this.ContentPanel.Height);
+
+            //Set the info window size & position
+            InfoWindow.Size = new Size(this.ContentPanel.Width * 2 / 5, this.ContentPanel.Height /2);
+            InfoWindow.Location = new Point(this.ContentPanel.Width * 3 / 5 - 5, this.ContentPanel.Height / 2 - 5);
+        }
+
+        private void OnInfoResize(object sender, EventArgs e)
+        {
+            //Set the Nav button size & position
+            AdministrativeOffices.Size = new Size(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height / 5);
+            AdministrativeOffices.Location = new Point(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height / 5 - 10);
+            Maintenance.Size = new Size(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height / 5);
+            Maintenance.Location = new Point(PersonalNavDevicePage.Width / 6 - 5, PersonalNavDevicePage.Height * 2 / 5);
+            DockingPorts.Size = new Size(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height / 5);
+            DockingPorts.Location = new Point(PersonalNavDevicePage.Width / 2 + 5, PersonalNavDevicePage.Height * 2 / 5);
+            Residential.Size = new Size(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height / 5);
+            Residential.Location = new Point(PersonalNavDevicePage.Width / 3, PersonalNavDevicePage.Height * 3 / 5 + 10);
         }
 
         #region AdjustableForm radio buttons
@@ -69,5 +94,60 @@ namespace Moonbase
             }
         }
         #endregion AdjustableForm radio buttons
+
+        #region Location Data
+        private void AdministrativeOffices_Click(object sender, EventArgs e)
+        {
+            currentLocation = Locations.Admin;
+            this.MainBackground.Image = global::Moonbase.Properties.Resources.Admin;
+            LocationName.Text = "Administrative Offices";
+            LocationDescription.Text = "This large room features a large glass window providing a full 180 degree view of moonbase Port Waterless. " +
+                "A hologram projector sits in the middle of the room, where the head officers discuss important decisions. " +
+                "Surrounding the room are stations for the moonbase's controls, which are manned by several scientists to make sure nothing bad happens.";
+
+        }
+
+        private void Maintenance_Click(object sender, EventArgs e)
+        {
+            currentLocation = Locations.Maintenance;
+            this.MainBackground.Image = global::Moonbase.Properties.Resources.Maintenance;
+            LocationName.Text = "Maintenance";
+            LocationDescription.Text = "The maintenance wing is the largest of the moonbase's wings." +
+                "It consists of multiple stories, reaching below the surface of the moon.\n" +
+                "The first level has several large energy-to-matter fabricators that is used for all of the moonbase's synthetic needs." +
+                "In addition, it also handles scientific reseach and alien study.\n" +
+                "The other levels include nuclear generators, oxygen converters, storage, and hydroponics.";
+        }
+
+        private void DockingPorts_Click(object sender, EventArgs e)
+        {
+            currentLocation = Locations.Docs;
+            this.MainBackground.Image = global::Moonbase.Properties.Resources.Airlock;
+            LocationName.Text = "Docking Airlocks";
+
+            LocationDescription.Text = "Due to the difficulty of docking a spaceship, this wing would be the largest if the dead space was included. " +
+                "The docs support the three major types of spaceships.\n" +
+                "There are 40 internal pressurized docking positions for the dextrous personal ship, the spacefly.\n" +
+                "There are 8 internal non-pressurized for the Alpion mining suits.\n" +
+                "There are 4 external magnetic seals for the large inter-planetary Bynop spaceship.";
+        }
+
+        private void Residential_Click(object sender, EventArgs e)
+        {
+            currentLocation = Locations.House;
+            this.MainBackground.Image = global::Moonbase.Properties.Resources.Cabin;
+            LocationName.Text = "Residential Rooms";
+            LocationDescription.Text = "Port Waterless is an important thoroughfare for ships traveling between Earth and the Moon. " +
+                "Due to the low gravity on the moon, the larger ships designed for colonization or deep-space exploration prefer to dock on it rather than the Earth. " +
+                "Specifically, those ships dock at Port Hugo. Port Waterless provides raw resources to Port Hugo for repairs, and many people use Port Waterless as a layover before continuing on to Port Hugo.\n" +
+                "Because of this, Port Waterless is staffed by 120 workers, 36 scientists, and 20 officers. There is also commonly somewhere between 15 and 50 visitors at any given time.\n" +
+                "Due to this, there is 230 bunks in the residential wing. In addition, there is also 10 recreational rooms of different functionality and 5 kitchens.";
+        }
+        #endregion Location Data
+
+        private void Button_Quit_Click(object sender, EventArgs e)
+        {
+            Program.Quit();
+        }
     }
 }
