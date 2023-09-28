@@ -117,7 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox3.Text" xml:space="preserve">
-    <value>A large room with four branching coridors, each leading to an electromagnetic airlock. Only one ship is currently attached. In the back of the room, the mechanic doses off sitting at his crowded workstation.</value>
+  <data name="LocationDescription.Text" xml:space="preserve">
+    <value>This large room features a large glass window providing a full 180 degree view of moonbase Port Waterless.
+A hologram projector sits in the middle of the room, where the head officers discuss important decisions.
+Surrounding the room are stations for the moonbase's controls, which are manned by several scientists to make sure nothing bad happens.</value>
   </data>
 </root>

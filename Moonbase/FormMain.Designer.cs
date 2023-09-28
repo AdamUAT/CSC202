@@ -35,34 +35,45 @@ namespace Moonbase
             this.Button_Windowed = new System.Windows.Forms.RadioButton();
             this.Button_Widescreen = new System.Windows.Forms.RadioButton();
             this.Button_Fullscreen = new System.Windows.Forms.RadioButton();
+            this.InfoWindow = new System.Windows.Forms.TabControl();
+            this.PersonalNavDevicePage = new System.Windows.Forms.TabPage();
+            this.Residential = new System.Windows.Forms.Button();
+            this.DockingPorts = new System.Windows.Forms.Button();
+            this.Maintenance = new System.Windows.Forms.Button();
+            this.AdministrativeOffices = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.LocationDescription = new System.Windows.Forms.TextBox();
+            this.LocationName = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.MainBackground = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Button_Quit = new System.Windows.Forms.Button();
             this.ContentPanel.SuspendLayout();
             this.ApplicationMode.SuspendLayout();
+            this.InfoWindow.SuspendLayout();
+            this.PersonalNavDevicePage.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.ApplicationMode);
-            this.ContentPanel.Controls.Add(this.groupBox1);
+            this.ContentPanel.Controls.Add(this.InfoWindow);
             this.ContentPanel.Controls.Add(this.MainBackground);
-            this.ContentPanel.Location = new System.Drawing.Point(27, 0);
-            this.ContentPanel.Size = new System.Drawing.Size(1850, 1041);
+            this.ContentPanel.Location = new System.Drawing.Point(33, 0);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ContentPanel.Size = new System.Drawing.Size(1196, 673);
             // 
             // ApplicationMode
             // 
             this.ApplicationMode.Controls.Add(this.Button_Windowed);
             this.ApplicationMode.Controls.Add(this.Button_Widescreen);
             this.ApplicationMode.Controls.Add(this.Button_Fullscreen);
-            this.ApplicationMode.Location = new System.Drawing.Point(14, 12);
+            this.ApplicationMode.Location = new System.Drawing.Point(7, 7);
+            this.ApplicationMode.Margin = new System.Windows.Forms.Padding(4);
             this.ApplicationMode.Name = "ApplicationMode";
-            this.ApplicationMode.Size = new System.Drawing.Size(200, 101);
+            this.ApplicationMode.Padding = new System.Windows.Forms.Padding(4);
+            this.ApplicationMode.Size = new System.Drawing.Size(267, 124);
             this.ApplicationMode.TabIndex = 5;
             this.ApplicationMode.TabStop = false;
             this.ApplicationMode.Text = "Application Mode";
@@ -70,9 +81,10 @@ namespace Moonbase
             // Button_Windowed
             // 
             this.Button_Windowed.AutoSize = true;
-            this.Button_Windowed.Location = new System.Drawing.Point(6, 19);
+            this.Button_Windowed.Location = new System.Drawing.Point(8, 23);
+            this.Button_Windowed.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Windowed.Name = "Button_Windowed";
-            this.Button_Windowed.Size = new System.Drawing.Size(76, 17);
+            this.Button_Windowed.Size = new System.Drawing.Size(92, 20);
             this.Button_Windowed.TabIndex = 1;
             this.Button_Windowed.Text = "Windowed";
             this.Button_Windowed.UseVisualStyleBackColor = true;
@@ -81,9 +93,10 @@ namespace Moonbase
             // Button_Widescreen
             // 
             this.Button_Widescreen.AutoSize = true;
-            this.Button_Widescreen.Location = new System.Drawing.Point(6, 65);
+            this.Button_Widescreen.Location = new System.Drawing.Point(8, 80);
+            this.Button_Widescreen.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Widescreen.Name = "Button_Widescreen";
-            this.Button_Widescreen.Size = new System.Drawing.Size(82, 17);
+            this.Button_Widescreen.Size = new System.Drawing.Size(101, 20);
             this.Button_Widescreen.TabIndex = 3;
             this.Button_Widescreen.Text = "Widescreen";
             this.Button_Widescreen.UseVisualStyleBackColor = true;
@@ -93,90 +106,172 @@ namespace Moonbase
             // 
             this.Button_Fullscreen.AutoSize = true;
             this.Button_Fullscreen.Checked = true;
-            this.Button_Fullscreen.Location = new System.Drawing.Point(6, 42);
+            this.Button_Fullscreen.Location = new System.Drawing.Point(8, 52);
+            this.Button_Fullscreen.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Fullscreen.Name = "Button_Fullscreen";
-            this.Button_Fullscreen.Size = new System.Drawing.Size(73, 17);
+            this.Button_Fullscreen.Size = new System.Drawing.Size(90, 20);
             this.Button_Fullscreen.TabIndex = 2;
             this.Button_Fullscreen.TabStop = true;
             this.Button_Fullscreen.Text = "Fullscreen";
             this.Button_Fullscreen.UseVisualStyleBackColor = true;
             this.Button_Fullscreen.CheckedChanged += new System.EventHandler(this.Button_Fullscreen_CheckedChanged);
             // 
+            // InfoWindow
+            // 
+            this.InfoWindow.Controls.Add(this.PersonalNavDevicePage);
+            this.InfoWindow.Controls.Add(this.tabPage2);
+            this.InfoWindow.Controls.Add(this.tabPage3);
+            this.InfoWindow.Location = new System.Drawing.Point(712, 316);
+            this.InfoWindow.Name = "InfoWindow";
+            this.InfoWindow.SelectedIndex = 0;
+            this.InfoWindow.Size = new System.Drawing.Size(481, 354);
+            this.InfoWindow.TabIndex = 6;
+            // 
+            // PersonalNavDevicePage
+            // 
+            this.PersonalNavDevicePage.Controls.Add(this.Residential);
+            this.PersonalNavDevicePage.Controls.Add(this.DockingPorts);
+            this.PersonalNavDevicePage.Controls.Add(this.Maintenance);
+            this.PersonalNavDevicePage.Controls.Add(this.AdministrativeOffices);
+            this.PersonalNavDevicePage.Location = new System.Drawing.Point(4, 25);
+            this.PersonalNavDevicePage.Name = "PersonalNavDevicePage";
+            this.PersonalNavDevicePage.Padding = new System.Windows.Forms.Padding(3);
+            this.PersonalNavDevicePage.Size = new System.Drawing.Size(473, 325);
+            this.PersonalNavDevicePage.TabIndex = 0;
+            this.PersonalNavDevicePage.Text = "Personal Nav Device";
+            this.PersonalNavDevicePage.UseVisualStyleBackColor = true;
+            // 
+            // Residential
+            // 
+            this.Residential.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Residential.Location = new System.Drawing.Point(145, 217);
+            this.Residential.Name = "Residential";
+            this.Residential.Size = new System.Drawing.Size(172, 56);
+            this.Residential.TabIndex = 3;
+            this.Residential.Text = "Residential";
+            this.Residential.UseVisualStyleBackColor = true;
+            this.Residential.Click += new System.EventHandler(this.Residential_Click);
+            // 
+            // DockingPorts
+            // 
+            this.DockingPorts.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DockingPorts.Location = new System.Drawing.Point(260, 137);
+            this.DockingPorts.Name = "DockingPorts";
+            this.DockingPorts.Size = new System.Drawing.Size(172, 56);
+            this.DockingPorts.TabIndex = 2;
+            this.DockingPorts.Text = "Docking Ports";
+            this.DockingPorts.UseVisualStyleBackColor = true;
+            this.DockingPorts.Click += new System.EventHandler(this.DockingPorts_Click);
+            // 
+            // Maintenance
+            // 
+            this.Maintenance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Maintenance.Location = new System.Drawing.Point(33, 137);
+            this.Maintenance.Name = "Maintenance";
+            this.Maintenance.Size = new System.Drawing.Size(172, 56);
+            this.Maintenance.TabIndex = 1;
+            this.Maintenance.Text = "Maintenance";
+            this.Maintenance.UseVisualStyleBackColor = true;
+            this.Maintenance.Click += new System.EventHandler(this.Maintenance_Click);
+            // 
+            // AdministrativeOffices
+            // 
+            this.AdministrativeOffices.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdministrativeOffices.Location = new System.Drawing.Point(145, 49);
+            this.AdministrativeOffices.Name = "AdministrativeOffices";
+            this.AdministrativeOffices.Size = new System.Drawing.Size(172, 56);
+            this.AdministrativeOffices.TabIndex = 0;
+            this.AdministrativeOffices.Text = "Administrative Offices";
+            this.AdministrativeOffices.UseVisualStyleBackColor = true;
+            this.AdministrativeOffices.Click += new System.EventHandler(this.AdministrativeOffices_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.LocationDescription);
+            this.tabPage2.Controls.Add(this.LocationName);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(473, 325);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Current Location";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // LocationDescription
+            // 
+            this.LocationDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LocationDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LocationDescription.Location = new System.Drawing.Point(3, 40);
+            this.LocationDescription.Multiline = true;
+            this.LocationDescription.Name = "LocationDescription";
+            this.LocationDescription.ReadOnly = true;
+            this.LocationDescription.Size = new System.Drawing.Size(467, 279);
+            this.LocationDescription.TabIndex = 1;
+            this.LocationDescription.Text = resources.GetString("LocationDescription.Text");
+            // 
+            // LocationName
+            // 
+            this.LocationName.AutoSize = true;
+            this.LocationName.BackColor = System.Drawing.Color.White;
+            this.LocationName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LocationName.Location = new System.Drawing.Point(7, 7);
+            this.LocationName.Name = "LocationName";
+            this.LocationName.Size = new System.Drawing.Size(137, 18);
+            this.LocationName.TabIndex = 0;
+            this.LocationName.Text = "Administrative Offices";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.Button_Quit);
+            this.tabPage3.Controls.Add(this.ApplicationMode);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(473, 325);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Menu";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // MainBackground
             // 
-            this.MainBackground.Image = global::Moonbase.Properties.Resources.Moonbase;
+            this.MainBackground.Image = global::Moonbase.Properties.Resources.Admin;
             this.MainBackground.Location = new System.Drawing.Point(0, 0);
-            this.MainBackground.Margin = new System.Windows.Forms.Padding(2);
+            this.MainBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainBackground.Name = "MainBackground";
-            this.MainBackground.Size = new System.Drawing.Size(1920, 1080);
+            this.MainBackground.Size = new System.Drawing.Size(2560, 1329);
             this.MainBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MainBackground.TabIndex = 5;
             this.MainBackground.TabStop = false;
             // 
-            // groupBox1
+            // Button_Quit
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(1077, 616);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 390);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Location Information";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(43, 133);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(295, 71);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = resources.GetString("textBox3.Text");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Room Description";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(43, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "The Docks";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Room Name";
+            this.Button_Quit.Location = new System.Drawing.Point(7, 152);
+            this.Button_Quit.Name = "Button_Quit";
+            this.Button_Quit.Size = new System.Drawing.Size(75, 23);
+            this.Button_Quit.TabIndex = 6;
+            this.Button_Quit.Text = "Quit";
+            this.Button_Quit.UseVisualStyleBackColor = true;
+            this.Button_Quit.Click += new System.EventHandler(this.Button_Quit_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FormMain";
             this.Text = "Port Waterless";
             this.ContentPanel.ResumeLayout(false);
             this.ApplicationMode.ResumeLayout(false);
             this.ApplicationMode.PerformLayout();
+            this.InfoWindow.ResumeLayout(false);
+            this.PersonalNavDevicePage.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -187,11 +282,17 @@ namespace Moonbase
         private System.Windows.Forms.RadioButton Button_Windowed;
         private System.Windows.Forms.RadioButton Button_Widescreen;
         private System.Windows.Forms.RadioButton Button_Fullscreen;
+        private TabControl InfoWindow;
+        private TabPage PersonalNavDevicePage;
+        private TabPage tabPage2;
         private PictureBox MainBackground;
-        private GroupBox groupBox1;
-        private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private Label label3;
+        private TabPage tabPage3;
+        private Button Residential;
+        private Button DockingPorts;
+        private Button Maintenance;
+        private Button AdministrativeOffices;
+        private Label LocationName;
+        private TextBox LocationDescription;
+        private Button Button_Quit;
     }
 }

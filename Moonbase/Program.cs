@@ -19,6 +19,14 @@ namespace Moonbase
             Application.Run(new FormMain());
         }
 
+        /// <summary>
+        /// Exits the application.
+        /// </summary>
+        public static void Quit()
+        {
+            Application.Exit();
+        }
+
         //Windowed: Adjustable window size, will not deform.
         //Fullscreen: Makes the form take up the whole screen, will not deform.
         //Widescreen: Makes the form take up the whole screen, will deform.
