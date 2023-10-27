@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Moonbase.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -193,7 +194,61 @@ namespace Moonbase
             MainBackground.Image = newLocationData.GetBackgroundImage();
             LocationName.Text = newLocationData.GetName();
             LocationDescription.Text = newLocationData.GetDescription();
+
+            ResetNPCs();
+
+            foreach(Actor npcToAdd in newLocationData.GetNPCs())
+            {
+                AddNPC(npcToAdd);
+            }
         }
+
+        private void ResetNPCs()
+        {
+            foreach(TabPage activeNPC in activeNPCs)
+            {
+                activeNPC.Controls.Clear();
+                NPCsSelection.Controls.Remove(activeNPC);
+            }
+            activeNPCs.Clear();
+        }
+
+        private void AddNPC(Actor npc)
+        {
+            //Create the new tab page
+            TabPage newNPC = new System.Windows.Forms.TabPage();
+            newNPC.Location = new System.Drawing.Point(4, 25);
+            newNPC.Name = npc.GetName();
+            newNPC.Padding = new System.Windows.Forms.Padding(3);
+            newNPC.Size = new System.Drawing.Size(456, 265);
+            newNPC.Text = npc.GetName();
+            newNPC.UseVisualStyleBackColor = true;
+
+            //Cache the page so that it can be removed
+            activeNPCs.Add(newNPC);
+
+            //Add the tab page to the tab group
+            NPCsSelection.Controls.Add(newNPC);
+
+            //Create the npc description display
+            TextBox npcDescription = new System.Windows.Forms.TextBox();
+            npcDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            npcDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            npcDescription.Location = new System.Drawing.Point(0, 0);
+            npcDescription.Multiline = true;
+            npcDescription.Name = "npcDescription";
+            npcDescription.ReadOnly = true;
+            npcDescription.Size = new System.Drawing.Size(456, 265);
+            //npcDescription.TabIndex = 1;
+            npcDescription.Text = npc.GetDescription();
+            
+            //Add the description to the tab
+            newNPC.Controls.Add(npcDescription);
+        }
+
+        private List<TabPage> activeNPCs = new List<TabPage>();
         #endregion Location Data
 
         private void Button_Quit_Click(object sender, EventArgs e)

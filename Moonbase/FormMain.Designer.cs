@@ -45,8 +45,10 @@ namespace Moonbase
             this.LocationDescription = new System.Windows.Forms.TextBox();
             this.LocationName = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.MainBackground = new System.Windows.Forms.PictureBox();
             this.Button_Quit = new System.Windows.Forms.Button();
+            this.MainBackground = new System.Windows.Forms.PictureBox();
+            this.Summary = new System.Windows.Forms.TabPage();
+            this.NPCsSelection = new System.Windows.Forms.TabControl();
             this.ContentPanel.SuspendLayout();
             this.ApplicationMode.SuspendLayout();
             this.InfoWindow.SuspendLayout();
@@ -54,6 +56,8 @@ namespace Moonbase
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).BeginInit();
+            this.Summary.SuspendLayout();
+            this.NPCsSelection.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
@@ -187,7 +191,7 @@ namespace Moonbase
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.LocationDescription);
+            this.tabPage2.Controls.Add(this.NPCsSelection);
             this.tabPage2.Controls.Add(this.LocationName);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -203,11 +207,11 @@ namespace Moonbase
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LocationDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LocationDescription.Location = new System.Drawing.Point(3, 40);
+            this.LocationDescription.Location = new System.Drawing.Point(0, 0);
             this.LocationDescription.Multiline = true;
             this.LocationDescription.Name = "LocationDescription";
             this.LocationDescription.ReadOnly = true;
-            this.LocationDescription.Size = new System.Drawing.Size(467, 279);
+            this.LocationDescription.Size = new System.Drawing.Size(456, 265);
             this.LocationDescription.TabIndex = 1;
             this.LocationDescription.Text = resources.GetString("LocationDescription.Text");
             // 
@@ -234,6 +238,16 @@ namespace Moonbase
             this.tabPage3.Text = "Menu";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // Button_Quit
+            // 
+            this.Button_Quit.Location = new System.Drawing.Point(7, 152);
+            this.Button_Quit.Name = "Button_Quit";
+            this.Button_Quit.Size = new System.Drawing.Size(75, 23);
+            this.Button_Quit.TabIndex = 6;
+            this.Button_Quit.Text = "Quit";
+            this.Button_Quit.UseVisualStyleBackColor = true;
+            this.Button_Quit.Click += new System.EventHandler(this.Button_Quit_Click);
+            // 
             // MainBackground
             // 
             this.MainBackground.Image = global::Moonbase.Properties.Resources.Admin;
@@ -245,15 +259,25 @@ namespace Moonbase
             this.MainBackground.TabIndex = 5;
             this.MainBackground.TabStop = false;
             // 
-            // Button_Quit
+            // Summary
             // 
-            this.Button_Quit.Location = new System.Drawing.Point(7, 152);
-            this.Button_Quit.Name = "Button_Quit";
-            this.Button_Quit.Size = new System.Drawing.Size(75, 23);
-            this.Button_Quit.TabIndex = 6;
-            this.Button_Quit.Text = "Quit";
-            this.Button_Quit.UseVisualStyleBackColor = true;
-            this.Button_Quit.Click += new System.EventHandler(this.Button_Quit_Click);
+            this.Summary.Controls.Add(this.LocationDescription);
+            this.Summary.Location = new System.Drawing.Point(4, 25);
+            this.Summary.Name = "Summary";
+            this.Summary.Padding = new System.Windows.Forms.Padding(3);
+            this.Summary.Size = new System.Drawing.Size(456, 265);
+            this.Summary.TabIndex = 0;
+            this.Summary.Text = "Summary";
+            this.Summary.UseVisualStyleBackColor = true;
+            // 
+            // NPCsSelection
+            // 
+            this.NPCsSelection.Controls.Add(this.Summary);
+            this.NPCsSelection.Location = new System.Drawing.Point(6, 28);
+            this.NPCsSelection.Name = "NPCsSelection";
+            this.NPCsSelection.SelectedIndex = 0;
+            this.NPCsSelection.Size = new System.Drawing.Size(464, 294);
+            this.NPCsSelection.TabIndex = 2;
             // 
             // FormMain
             // 
@@ -272,6 +296,9 @@ namespace Moonbase
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainBackground)).EndInit();
+            this.Summary.ResumeLayout(false);
+            this.Summary.PerformLayout();
+            this.NPCsSelection.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,5 +321,7 @@ namespace Moonbase
         private Label LocationName;
         private TextBox LocationDescription;
         private Button Button_Quit;
+        private TabControl NPCsSelection;
+        private TabPage Summary;
     }
 }
