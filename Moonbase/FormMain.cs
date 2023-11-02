@@ -193,7 +193,7 @@ namespace Moonbase
             //Apply the changes to the form.
             MainBackground.Image = newLocationData.GetBackgroundImage();
             LocationName.Text = newLocationData.GetName();
-            LocationDescription.Text = newLocationData.GetDescription();
+            LocationDescription.Text = newLocationData.GetRandomDescription();
 
             ResetNPCs();
 
