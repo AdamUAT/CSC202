@@ -201,6 +201,8 @@ namespace Moonbase
             {
                 AddNPC(npcToAdd);
             }
+
+            Program.audioManager.PlayWalkSound();
         }
 
         private void ResetNPCs()
