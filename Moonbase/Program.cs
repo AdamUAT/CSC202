@@ -8,12 +8,16 @@ namespace Moonbase
 {
     internal static class Program
     {
+        public static AudioManager audioManager;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            audioManager = new AudioManager();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
