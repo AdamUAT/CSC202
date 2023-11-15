@@ -53,6 +53,7 @@
     <Compile Include="AdjustableForm.Designer.cs">
       <DependentUpon>AdjustableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AudioManager.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,10 @@
     <Content Include="Graphics\Maintenance.png" />
     <Content Include="Graphics\Moonbase.jpg" />
     <Content Include="Graphics\Transparent.png" />
+    <Content Include="Sounds\walk1.wav" />
+    <Content Include="Sounds\walk2.wav" />
+    <Content Include="Sounds\walk3.wav" />
+    <Content Include="Sounds\walk4.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
