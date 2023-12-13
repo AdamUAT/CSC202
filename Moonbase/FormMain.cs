@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -191,7 +192,14 @@ namespace Moonbase
             }
 
             //Apply the changes to the form.
-            MainBackground.Image = newLocationData.GetBackgroundImage();
+            try
+            {
+                MainBackground.Image = newLocationData.GetBackgroundImage();
+            }
+            catch(FileNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             LocationName.Text = newLocationData.GetName();
             LocationDescription.Text = newLocationData.GetRandomDescription();
 

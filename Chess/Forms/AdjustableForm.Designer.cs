@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Moonbase
+﻿namespace Chess
 {
     partial class AdjustableForm
     {
@@ -30,41 +28,43 @@ namespace Moonbase
         /// </summary>
         private void InitializeComponent()
         {
-            this.ContentPanel = new System.Windows.Forms.Panel();
-            this.Background = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
-            this.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "AdjustableForm";
+            
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Location = new System.Drawing.Point(296, 165);
-            this.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ContentPanel = new System.Windows.Forms.Panel();
+            this.ContentPanel.Location = new System.Drawing.Point(222, 134);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(275, 100);
+            this.ContentPanel.Size = new System.Drawing.Size(206, 81);
             this.ContentPanel.TabIndex = 1;
             // 
             // Background
             // 
+            this.Background = new System.Windows.Forms.PictureBox();
             this.Background.Location = new System.Drawing.Point(0, 0);
-            this.Background.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Background.Margin = new System.Windows.Forms.Padding(2);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(100, 50);
+            this.Background.Size = new System.Drawing.Size(75, 41);
             this.Background.TabIndex = 0;
             this.Background.TabStop = false;
             // 
             // AdjustableForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.Background);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdjustableForm";
             this.Text = "AdjustableForm";
             ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
