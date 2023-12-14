@@ -16,11 +16,17 @@ namespace Chess
 
         List<Piece> pieces = new List<Piece>();
 
+        float returnLocationPercentX = 0;
+        float returnLocationPercentY = 0;
+        float returnScalePercentX = 0;
+        float returnScalePercentY = 0;
+
         public Board()
         {
             InitializeComponent();
 
             //Initialize the board
+            #region Pieces
             Piece leftBlackRook = new Piece(Piece.PieceTypes.Rook, true, BoardImage);
             leftBlackRook.SetLocation((int)(BoardImage.Width * 1 / 18.0f), (int)(BoardImage.Height * 1 / 18.0f));
             leftBlackRook.SetScale((int)(BoardImage.Width * 1.0f / 9), (int)(BoardImage.Height * 1.0f / 9));
@@ -61,7 +67,7 @@ namespace Chess
             rightBlackRook.SetScale((int)(BoardImage.Width * 1.0f / 9), (int)(BoardImage.Height * 1.0f / 9));
             pieces.Add(rightBlackRook);
 
-            for(int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 Piece blackPawn = new Piece(Piece.PieceTypes.Pawn, true, BoardImage);
                 blackPawn.SetLocation((int)(BoardImage.Width * (i * 2 + 1) / 18.0f), (int)(BoardImage.Height * 3 / 18.0f));
@@ -116,15 +122,34 @@ namespace Chess
             rightWhiteRook.SetLocation((int)(BoardImage.Width * 15 / 18.0f), (int)(BoardImage.Height * 15 / 18.0f));
             rightWhiteRook.SetScale((int)(BoardImage.Width * 1.0f / 9), (int)(BoardImage.Height * 1.0f / 9));
             pieces.Add(rightWhiteRook);
+
+            #endregion Pieces
+
+            AdjustWindowSize();
         }
 
         protected override void OnResize()
         {
             base.OnResize();
 
+            //Find what the percent position of each piece before resizes to the board.
+            System.Numerics.Vector2[] piecesLocationPercent = new System.Numerics.Vector2[pieces.Count];
+            for(int i = 0; i < pieces.Count; i++)
+            {
+                float locationPercentX = (float)pieces[i].GetLocation().X / BoardImage.Width;
+                float locationPercentY = (float)pieces[i].GetLocation().Y / BoardImage.Height;
+                piecesLocationPercent[i] = new System.Numerics.Vector2(locationPercentX, locationPercentY);
+            }
+
+
             if (boardMarginPercent == 0)
             {
                 boardMarginPercent = (float)BoardImage.Location.Y / ContentPanel.Height;
+
+                returnLocationPercentX = (float)Return.Location.X / BoardBackground.Width;
+                returnLocationPercentY = (float)Return.Location.Y / BoardBackground.Height;
+                returnScalePercentX = (float)Return.Width / BoardBackground.Width;
+                returnScalePercentY = (float)Return.Height / BoardBackground.Height;
             }
 
             BoardBackground.Width = ContentPanel.Width;
@@ -132,34 +157,26 @@ namespace Chess
 
             int boardMargin = (int)(boardMarginPercent * BoardBackground.Height);
 
-            int boardImageHeight = BoardBackground.Height - boardMargin * 2;
-            int boardImageWidth = BoardImage.Height;
-            Point boardImageLocation = new Point((int)((BoardBackground.Width / 2.0f) - (BoardImage.Width / 2.0f)), boardMargin);
+            BoardImage.Height = BoardBackground.Height - boardMargin * 2;
+            BoardImage.Width = BoardImage.Height;
+            BoardImage.Location = new Point((int)((BoardBackground.Width / 2.0f) - (BoardImage.Width / 2.0f)), boardMargin);
 
-            foreach(Piece piece in  pieces)
+            for(int i = 0; i < pieces.Count; i++)
             {
-                float locationPercentX = (float)piece.GetLocation().X / BoardImage.Width;
-                float locationPercentY = (float)piece.GetLocation().Y / BoardImage.Height;
-                piece.SetLocation((int)(locationPercentX * boardImageWidth), (int)(locationPercentY * boardImageHeight));
+                pieces[i].SetLocation((int)(piecesLocationPercent[i].X * BoardImage.Width), (int)(piecesLocationPercent[i].Y * BoardImage.Height));
 
-                piece.SetScale((int)(boardImageWidth * 1.0f / 9), (int)(boardImageHeight * 1.0f / 9));
+                pieces[i].SetScale((int)(BoardImage.Width * 1.0f / 9), (int)(BoardImage.Height * 1.0f / 9));
             }
 
-            BoardImage.Height = boardImageHeight;
-            BoardImage.Width = boardImageWidth;
-            BoardImage.Location = boardImageLocation;
+            Return.Location = new Point((int)(returnLocationPercentX * BoardBackground.Width), (int)(returnLocationPercentY * BoardBackground.Height));
+            Return.Width = (int)(returnScalePercentX * BoardBackground.Width);
+            Return.Height = (int)(returnScalePercentY * BoardBackground.Height);
         }
 
-
-    }
-
-    internal class BoardSpace
-    {
-        public Piece Piece;
-
-        public BoardSpace(Piece.PieceTypes initialPiece, bool isBlack, Control parent)
+        private void Return_Click(object sender, EventArgs e)
         {
-            Piece = new Piece(initialPiece, isBlack, parent);
+            Program.menuInstance.Show();
+            this.Close();
         }
     }
 
@@ -271,6 +288,9 @@ namespace Chess
             image.Click += StopDragging;
 
             Program.updateTimer.Tick += DragPiece;
+
+            //Play audio
+            Program.audioManager.PlayPiecePickup();
         }
 
         private void DragPiece(Object sender, EventArgs e)
@@ -285,6 +305,9 @@ namespace Chess
             image.Click += StartDragging;
             image.Click -= StopDragging;
             Program.updateTimer.Tick -= DragPiece;
+
+            //Play audio
+            Program.audioManager.PlayPieceSetdown();
         }
 
         public void SetLocation(int x, int y)
@@ -300,7 +323,7 @@ namespace Chess
 
         public Point GetLocation()
         {
-            return(image.Location);
+            return (image.Location);
         }
 
         //The pieces should be square, so the width and height are the same.

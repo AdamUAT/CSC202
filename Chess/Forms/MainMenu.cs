@@ -65,6 +65,10 @@ namespace Chess
             PlayTextOffsetGoal = PlayTextStart;
             SettingsTextOffsetGoal = SettingsTextStart;
             QuitTextOffsetGoal = QuitTextStart;
+
+            SettingsBox.Hide();
+
+            AdjustWindowSize();
         }
 
         protected override void OnResize()
@@ -281,18 +285,25 @@ namespace Chess
 
         private void Settings()
         {
-            MessageBox.Show("Settigns");
+            SettingsBox.Show();
         }
 
         private void Quit()
         {
             Program.Quit();
         }
+        private void Back_Click(object sender, EventArgs e)
+        {
+            SettingsBox.Hide();
+        }
 
         #region Button Animations
         #region Play Button
         private void PlayButton_MouseEnter(object sender, EventArgs e)
         {
+            //Play audio
+            Program.audioManager.PlayTextSlide();
+
             Program.updateTimer.Tick += UpdatePlayButton;
         }
 
@@ -323,6 +334,9 @@ namespace Chess
         #region Settings Button
         private void SettingsButton_MouseEnter(object sender, EventArgs e)
         {
+            //Play audio
+            Program.audioManager.PlayTextSlide();
+
             Program.updateTimer.Tick += UpdateSettingsButton;
         }
 
@@ -354,6 +368,9 @@ namespace Chess
 
         private void QuitButton_MouseEnter(object sender, EventArgs e)
         {
+            //Play audio
+            Program.audioManager.PlayTextSlide();
+
             Program.updateTimer.Tick += UpdateQuitButton;
         }
 
@@ -384,5 +401,37 @@ namespace Chess
         #endregion Button Animations
 
         #endregion Buttons
+
+        private void WindowModeButton_Windowed_CheckedChanged(object sender, EventArgs e)
+        {
+            if(WindowModeButton_Windowed.Checked)
+            {
+                Program._windowMode = Program.WindowMode.Windowed;
+
+                WindowState = FormWindowState.Normal;
+
+                AdjustWindowSize();
+            }
+        }
+
+        private void WindowModeButton_Fullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WindowModeButton_Fullscreen.Checked)
+            {
+                Program._windowMode = Program.WindowMode.Fullscreen;
+
+                AdjustWindowSize();
+            }
+        }
+
+        private void WindowModeButton_Widescreen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WindowModeButton_Widescreen.Checked)
+            {
+                Program._windowMode = Program.WindowMode.Widescreen;
+
+                AdjustWindowSize();
+            }
+        }
     }
 }

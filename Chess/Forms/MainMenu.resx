@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>This Chess game is a virtual chess board. That means it gives you-the player-to move the pieces at any time and any way you wish!
+
+To pick up a piece, click on it once. To set it down, click again on the board.</value>
+  </data>
 </root>

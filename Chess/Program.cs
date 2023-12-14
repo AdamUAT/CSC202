@@ -3,6 +3,7 @@ namespace Chess
     internal static class Program
     {
         public static AudioManager audioManager;
+        public static MainMenu menuInstance;
 
         /// <summary>
         ///  The main entry point for the application.
@@ -17,7 +18,8 @@ namespace Chess
             updateTimer.Interval = 1000 / framesPerSecond;
             updateTimer.Start();
 
-            Application.Run(new MainMenu());
+            menuInstance = new MainMenu();
+            Application.Run(menuInstance);
         }
 
         /// <summary>

@@ -91,6 +91,15 @@ namespace Chess.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream buttonSlide {
+            get {
+                return ResourceManager.GetStream("buttonSlide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap King_Black {
@@ -171,6 +180,15 @@ namespace Chess.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream pickUp {
+            get {
+                return ResourceManager.GetStream("pickUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PlayText {
@@ -213,6 +231,16 @@ namespace Chess.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Return {
+            get {
+                object obj = ResourceManager.GetObject("Return", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rook_Black {
             get {
                 object obj = ResourceManager.GetObject("Rook_Black", resourceCulture);
@@ -227,6 +255,15 @@ namespace Chess.Properties {
             get {
                 object obj = ResourceManager.GetObject("Rook_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SetDown {
+            get {
+                return ResourceManager.GetStream("SetDown", resourceCulture);
             }
         }
         
