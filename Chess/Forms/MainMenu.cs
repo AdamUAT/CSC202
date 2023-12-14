@@ -18,9 +18,9 @@ namespace Chess
 
         //Controls the sliding of the button's text when hovered over
         //Designer variables
-        int PlayTextOffset = 60;
-        int SettingsTextOffset = 60;
-        int QuitTextOffset = 60;
+        int PlayTextOffset = 140;
+        int SettingsTextOffset = 100;
+        int QuitTextOffset = 140;
         int PlayTextStart = 21;
         int SettingsTextStart = 21;
         int QuitTextStart = 21;
@@ -29,6 +29,27 @@ namespace Chess
         int PlayTextOffsetGoal = 0;
         int SettingsTextOffsetGoal = 0;
         int QuitTextOffsetGoal = 0;
+
+        //The size/location of the resizing buttons/text
+        System.Numerics.Vector2 PlayButtonPositionPercent;
+        System.Numerics.Vector2 PlayButtonScalePercent;
+        System.Numerics.Vector2 SettingsButtonPositionPercent;
+        System.Numerics.Vector2 SettingsButtonScalePercent;
+        System.Numerics.Vector2 QuitButtonPositionPercent;
+        System.Numerics.Vector2 QuitButtonScalePercent;
+
+        System.Numerics.Vector2 PlayButtonTextScalePercent;
+        float PlayButtonPositionHeightPercent;
+        float PlayButtonPositionPercentStartX;
+        float PlayButtonPositionPercentEndX;
+        System.Numerics.Vector2 SettingsButtonTextScalePercent;
+        float SettingsButtonPositionHeightPercent;
+        float SettingsButtonPositionPercentStartX;
+        float SettingsButtonPositionPercentEndX;
+        System.Numerics.Vector2 QuitButtonTextScalePercent;
+        float QuitButtonPositionHeightPercent;
+        float QuitButtonPositionPercentStartX;
+        float QuitButtonPositionPercentEndX;
 
 
 
@@ -51,6 +72,68 @@ namespace Chess
             base.OnResize();
 
             MainMenuBackground.Size = new Size(this.ContentPanel.Width, this.ContentPanel.Height);
+
+            //Remember what the starting position the designers set for the default resolution for rescaling purposes.
+            if (PlayButtonPositionPercent == System.Numerics.Vector2.Zero)
+            {
+                PlayButtonPositionPercent = new System.Numerics.Vector2((float)PlayButton.Location.X / MainMenuBackground.Width, (float)PlayButton.Location.Y / MainMenuBackground.Height);
+                PlayButtonScalePercent = new System.Numerics.Vector2((float)PlayButton.Width / MainMenuBackground.Width, (float)PlayButton.Height / MainMenuBackground.Height);
+                SettingsButtonPositionPercent = new System.Numerics.Vector2((float)SettingsButton.Location.X / MainMenuBackground.Width, (float)SettingsButton.Location.Y / MainMenuBackground.Height);
+                SettingsButtonScalePercent = new System.Numerics.Vector2((float)SettingsButton.Width / MainMenuBackground.Width, (float)SettingsButton.Height / MainMenuBackground.Height);
+                QuitButtonPositionPercent = new System.Numerics.Vector2((float)QuitButton.Location.X / MainMenuBackground.Width, (float)QuitButton.Location.Y / MainMenuBackground.Height);
+                QuitButtonScalePercent = new System.Numerics.Vector2((float)QuitButton.Width / MainMenuBackground.Width, (float)QuitButton.Height / MainMenuBackground.Height);
+
+                PlayButtonTextScalePercent = new System.Numerics.Vector2((float)PlayButtonText.Width / PlayButton.Width, (float)PlayButtonText.Height / PlayButton.Height);
+                SettingsButtonTextScalePercent = new System.Numerics.Vector2((float)SettingsButtonText.Width / SettingsButton.Width, (float)SettingsButtonText.Height / SettingsButton.Height);
+                QuitButtonTextScalePercent = new System.Numerics.Vector2((float)QuitButtonText.Width / QuitButton.Width, (float)QuitButtonText.Height / QuitButton.Height);
+
+                PlayButtonPositionHeightPercent = (float)PlayButtonText.Location.Y / PlayButton.Height;
+                SettingsButtonPositionHeightPercent = (float)SettingsButtonText.Location.Y / SettingsButton.Height;
+                QuitButtonPositionHeightPercent = (float)QuitButtonText.Location.Y / QuitButton.Height;
+
+                PlayButtonPositionPercentStartX = (float)PlayTextStart / PlayButton.Width;
+                PlayButtonPositionPercentEndX = (float)PlayTextOffset / PlayButton.Width;
+                SettingsButtonPositionPercentStartX = (float)SettingsTextStart / SettingsButton.Width;
+                SettingsButtonPositionPercentEndX = (float)SettingsTextOffset / SettingsButton.Width;
+                QuitButtonPositionPercentStartX = (float)QuitTextStart / QuitButton.Width;
+                QuitButtonPositionPercentEndX = (float)QuitTextOffset / QuitButton.Width;
+            }
+
+            PlayButton.Location = new Point((int)(PlayButtonPositionPercent.X * MainMenuBackground.Width), (int)(PlayButtonPositionPercent.Y * MainMenuBackground.Height));
+            PlayButton.Width = (int)(PlayButtonScalePercent.X * MainMenuBackground.Width);
+            PlayButton.Height = (int)(PlayButtonScalePercent.Y * MainMenuBackground.Height);
+            SettingsButton.Location = new Point((int)(SettingsButtonPositionPercent.X * MainMenuBackground.Width), (int)(SettingsButtonPositionPercent.Y * MainMenuBackground.Height));
+            SettingsButton.Width = (int)(SettingsButtonScalePercent.X * MainMenuBackground.Width);
+            SettingsButton.Height = (int)(SettingsButtonScalePercent.Y * MainMenuBackground.Height);
+            QuitButton.Location = new Point((int)(QuitButtonPositionPercent.X * MainMenuBackground.Width), (int)(QuitButtonPositionPercent.Y * MainMenuBackground.Height));
+            QuitButton.Width = (int)(QuitButtonScalePercent.X * MainMenuBackground.Width);
+            QuitButton.Height = (int)(QuitButtonScalePercent.Y * MainMenuBackground.Height);
+
+            float playButtonTextLocationPercentX = (float)(PlayButtonText.Location.X - PlayTextStart) / (PlayTextOffset - PlayTextStart);
+            float settingsButtonTextLocationPercentX = (float)(SettingsButtonText.Location.X - SettingsTextStart) / (SettingsTextOffset - SettingsTextStart);
+            float quitButtonTextLocationPercentX = (float)(QuitButtonText.Location.X - QuitTextStart) / (QuitTextOffset - QuitTextStart);
+
+            PlayTextStart = (int)(PlayButtonPositionPercentStartX * PlayButton.Width);
+            PlayTextOffset = (int)(PlayButtonPositionPercentEndX * PlayButton.Width);
+            SettingsTextStart = (int)(SettingsButtonPositionPercentStartX * SettingsButton.Width);
+            SettingsTextOffset = (int)(SettingsButtonPositionPercentEndX * SettingsButton.Width);
+            QuitTextStart = (int)(QuitButtonPositionPercentStartX * QuitButton.Width);
+            QuitTextOffset = (int)(QuitButtonPositionPercentEndX * QuitButton.Width);
+
+            PlayButtonText.Location = new Point((int)((PlayTextOffset - PlayTextStart) * playButtonTextLocationPercentX + PlayTextStart), (int)(PlayButtonPositionHeightPercent * PlayButton.Height));
+            SettingsButtonText.Location = new Point((int)((SettingsTextOffset - SettingsTextStart) * settingsButtonTextLocationPercentX + SettingsTextStart), (int)(PlayButtonPositionHeightPercent * PlayButton.Height));
+            QuitButtonText.Location = new Point((int)((QuitTextOffset - QuitTextStart) * quitButtonTextLocationPercentX + QuitTextStart), (int)(PlayButtonPositionHeightPercent * PlayButton.Height));
+
+            PlayTextOffsetGoal = PlayTextStart;
+            SettingsTextOffsetGoal = SettingsTextStart;
+            QuitTextOffsetGoal = QuitTextStart;
+
+            PlayButtonText.Width = (int)(PlayButtonTextScalePercent.X * PlayButton.Width);
+            PlayButtonText.Height = (int)(PlayButtonTextScalePercent.Y * PlayButton.Height);
+            SettingsButtonText.Width = (int)(SettingsButtonTextScalePercent.X * SettingsButton.Width);
+            SettingsButtonText.Height = (int)(SettingsButtonTextScalePercent.Y * SettingsButton.Height);
+            QuitButtonText.Width = (int)(QuitButtonTextScalePercent.X * QuitButton.Width);
+            QuitButtonText.Height = (int)(QuitButtonTextScalePercent.Y * QuitButton.Height);
         }
 
         private void OnUpdate(Object sender, EventArgs e)
@@ -59,6 +142,8 @@ namespace Chess
             MoveButtonText(SettingsButtonText, SettingsTextOffset, SettingsTextStart, SettingsTextOffsetGoal);
             MoveButtonText(QuitButtonText, QuitTextOffset, QuitTextStart, QuitTextOffsetGoal);
         }
+
+        #region Buttons
 
         private void MoveButtonText(PictureBox text, int offset, int start, int goal)
         {
@@ -141,7 +226,7 @@ namespace Chess
                 scaledClickPoint = new Point((int)(clickPoint.X / scalePercent), (int)((clickPoint.Y - (pixelsToIgnore / 2)) / scalePercent));
             }
 
-            if (scaledClickPoint.X < 0 || scaledClickPoint.X > image.Width || scaledClickPoint.Y < 0 || scaledClickPoint.Y > image.Height)
+            if (scaledClickPoint.X < 0 || scaledClickPoint.X >= image.Width || scaledClickPoint.Y < 0 || scaledClickPoint.Y >= image.Height)
             {
                 return false;
             }
@@ -153,7 +238,7 @@ namespace Chess
         {
             if (IsMouseOnButton(PlayButton, buttonImage))
             {
-                
+                Play();
             }
         }
 
@@ -161,7 +246,7 @@ namespace Chess
         {
             if (IsMouseOnButton(SettingsButton, buttonImage))
             {
-
+                Settings();
             }
         }
 
@@ -169,8 +254,38 @@ namespace Chess
         {
             if (IsMouseOnButton(QuitButton, buttonImage))
             {
-
+                Quit();
             }
+        }
+        private void PlayButtonText_Click(object sender, EventArgs e)
+        {
+            Play();
+        }
+
+        private void SettingsButtonText_Click(object sender, EventArgs e)
+        {
+            Settings();
+        }
+
+        private void QuitButtonText_Click(object sender, EventArgs e)
+        {
+            Quit();
+        }
+
+        private void Play()
+        {
+            MessageBox.Show("Play");
+            MessageBox.Show(MainMenuBackground.Width.ToString());
+        }
+
+        private void Settings()
+        {
+            MessageBox.Show("Settigns");
+        }
+
+        private void Quit()
+        {
+            Program.Quit();
         }
 
         #region Button Animations
@@ -267,5 +382,6 @@ namespace Chess
         #endregion Quit Button
         #endregion Button Animations
 
+        #endregion Buttons
     }
 }

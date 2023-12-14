@@ -96,6 +96,7 @@ namespace Chess
             QuitButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             QuitButtonText.TabIndex = 6;
             QuitButtonText.TabStop = false;
+            QuitButtonText.Click += QuitButtonText_Click;
             QuitButtonText.MouseEnter += QuitButtonText_MouseEnter;
             // 
             // SettingsButton
@@ -123,6 +124,7 @@ namespace Chess
             SettingsButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             SettingsButtonText.TabIndex = 5;
             SettingsButtonText.TabStop = false;
+            SettingsButtonText.Click += SettingsButtonText_Click;
             SettingsButtonText.MouseEnter += SettingsButtonText_MouseEnter;
             // 
             // PlayButton
@@ -150,6 +152,7 @@ namespace Chess
             PlayButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             PlayButtonText.TabIndex = 4;
             PlayButtonText.TabStop = false;
+            PlayButtonText.Click += PlayButtonText_Click;
             PlayButtonText.MouseEnter += PlayButtonText_MouseEnter;
             // 
             // MainMenu
