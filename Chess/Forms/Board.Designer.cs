@@ -30,6 +30,7 @@
         {
             BoardBackground = new PictureBox();
             BoardImage = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BoardBackground).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BoardImage).BeginInit();
@@ -79,5 +80,6 @@
 
         private PictureBox BoardBackground;
         private PictureBox BoardImage;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

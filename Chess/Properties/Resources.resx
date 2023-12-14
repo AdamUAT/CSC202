@@ -118,8 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Bishop_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Bishop_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bishop_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Bishop_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Board" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="King_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\King_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="King_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\King_Whtie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knight_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Knight_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knight_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Knight_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainMenuButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\MainMenuButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,11 +145,29 @@
   <data name="MainMenuScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\MainMenuScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pawn_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Pawn_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pawn_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Pawn_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PlayText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\PlayText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Queen_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Queen_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Queen_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Queen_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="QuitText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\QuitText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rook_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Rook_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rook_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Pieces\Rook_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SettingsText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\SettingsText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
