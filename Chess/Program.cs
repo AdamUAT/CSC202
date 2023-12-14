@@ -10,9 +10,13 @@ namespace Chess
         [STAThread]
         static void Main()
         {
+            ApplicationConfiguration.Initialize();
+
             audioManager = new AudioManager();
 
-            ApplicationConfiguration.Initialize();
+            updateTimer.Interval = 1000 / framesPerSecond;
+            updateTimer.Start();
+
             Application.Run(new MainMenu());
         }
 
@@ -36,5 +40,9 @@ namespace Chess
         /// The ideal aspect ratio of the program. Width:Height
         /// </summary>
         public const float ASPECT_RATIO = 16.0f / 9.0f;
+
+        //A timed update loop
+        public static System.Windows.Forms.Timer updateTimer = new System.Windows.Forms.Timer();
+        private static int framesPerSecond = 60;
     }
 }

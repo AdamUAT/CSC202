@@ -31,32 +31,34 @@ namespace Chess
         private void InitializeComponent()
         {
             MainMenuBackground = new PictureBox();
-            PlayButton = new PictureBox();
-            SettingsButton = new PictureBox();
             QuitButton = new PictureBox();
-            PlayButtonText = new PictureBox();
-            SettingsButtonText = new PictureBox();
             QuitButtonText = new PictureBox();
+            SettingsButton = new PictureBox();
+            SettingsButtonText = new PictureBox();
+            PlayButton = new PictureBox();
+            PlayButtonText = new PictureBox();
             ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MainMenuBackground).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PlayButton).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)SettingsButton).BeginInit();
+            MainMenuBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QuitButton).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PlayButtonText).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)SettingsButtonText).BeginInit();
+            QuitButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QuitButtonText).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SettingsButton).BeginInit();
+            SettingsButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SettingsButtonText).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PlayButton).BeginInit();
+            PlayButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PlayButtonText).BeginInit();
             SuspendLayout();
             // 
             // ContentPanel
             // 
-            
             ContentPanel.Controls.Add(MainMenuBackground);
             ContentPanel.Location = new Point(0, 0);
             ContentPanel.Size = new Size(800, 450);
             // 
             // MainMenuBackground
             // 
-            QuitButton.Controls.Add(QuitButtonText);
             MainMenuBackground.Controls.Add(QuitButton);
             MainMenuBackground.Controls.Add(SettingsButton);
             MainMenuBackground.Controls.Add(PlayButton);
@@ -69,35 +71,10 @@ namespace Chess
             MainMenuBackground.TabIndex = 0;
             MainMenuBackground.TabStop = false;
             // 
-            // PlayButton
-            //
-            PlayButton.Controls.Add(PlayButtonText);
-            PlayButton.BackColor = Color.Transparent;
-            PlayButton.Image = Properties.Resources.MainMenuButton;
-            PlayButton.Location = new Point(132, 170);
-            PlayButton.Name = "PlayButton";
-            PlayButton.Size = new Size(315, 81);
-            PlayButton.SizeMode = PictureBoxSizeMode.Zoom;
-            PlayButton.TabIndex = 1;
-            PlayButton.TabStop = false;
-            PlayButton.Click += PlayButton_Click;
-            // 
-            // SettingsButton
-            // 
-            SettingsButton.Controls.Add(SettingsButtonText);
-            SettingsButton.BackColor = Color.Transparent;
-            SettingsButton.Image = Properties.Resources.MainMenuButton;
-            SettingsButton.Location = new Point(96, 248);
-            SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(315, 81);
-            SettingsButton.SizeMode = PictureBoxSizeMode.Zoom;
-            SettingsButton.TabIndex = 2;
-            SettingsButton.TabStop = false;
-            // 
             // QuitButton
             // 
-            QuitButton.Controls.Add(QuitButtonText);
             QuitButton.BackColor = Color.Transparent;
+            QuitButton.Controls.Add(QuitButtonText);
             QuitButton.Image = Properties.Resources.MainMenuButton;
             QuitButton.Location = new Point(62, 322);
             QuitButton.Name = "QuitButton";
@@ -105,28 +82,9 @@ namespace Chess
             QuitButton.SizeMode = PictureBoxSizeMode.Zoom;
             QuitButton.TabIndex = 3;
             QuitButton.TabStop = false;
-            // 
-            // PlayButtonText
-            // 
-            PlayButtonText.BackColor = Color.Transparent;
-            PlayButtonText.Image = Properties.Resources.PlayText;
-            PlayButtonText.Location = new Point(21, 21);
-            PlayButtonText.Name = "PlayButtonText";
-            PlayButtonText.Size = new Size(103, 40);
-            PlayButtonText.SizeMode = PictureBoxSizeMode.Zoom;
-            PlayButtonText.TabIndex = 4;
-            PlayButtonText.TabStop = false;
-            // 
-            // SettingsButtonText
-            // 
-            SettingsButtonText.BackColor = Color.Transparent;
-            SettingsButtonText.Image = Properties.Resources.SettingsText;
-            SettingsButtonText.Location = new Point(21, 21);
-            SettingsButtonText.Name = "SettingsButtonText";
-            SettingsButtonText.Size = new Size(164, 40);
-            SettingsButtonText.SizeMode = PictureBoxSizeMode.Zoom;
-            SettingsButtonText.TabIndex = 5;
-            SettingsButtonText.TabStop = false;
+            QuitButton.Click += QuitButton_Click;
+            QuitButton.MouseEnter += QuitButton_MouseEnter;
+            QuitButton.MouseLeave += QuitButton_MouseLeave;
             // 
             // QuitButtonText
             // 
@@ -138,6 +96,61 @@ namespace Chess
             QuitButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             QuitButtonText.TabIndex = 6;
             QuitButtonText.TabStop = false;
+            QuitButtonText.MouseEnter += QuitButtonText_MouseEnter;
+            // 
+            // SettingsButton
+            // 
+            SettingsButton.BackColor = Color.Transparent;
+            SettingsButton.Controls.Add(SettingsButtonText);
+            SettingsButton.Image = Properties.Resources.MainMenuButton;
+            SettingsButton.Location = new Point(96, 248);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(315, 81);
+            SettingsButton.SizeMode = PictureBoxSizeMode.Zoom;
+            SettingsButton.TabIndex = 2;
+            SettingsButton.TabStop = false;
+            SettingsButton.Click += SettingsButton_Click;
+            SettingsButton.MouseEnter += SettingsButton_MouseEnter;
+            SettingsButton.MouseLeave += SettingsButton_MouseLeave;
+            // 
+            // SettingsButtonText
+            // 
+            SettingsButtonText.BackColor = Color.Transparent;
+            SettingsButtonText.Image = Properties.Resources.SettingsText;
+            SettingsButtonText.Location = new Point(21, 21);
+            SettingsButtonText.Name = "SettingsButtonText";
+            SettingsButtonText.Size = new Size(164, 40);
+            SettingsButtonText.SizeMode = PictureBoxSizeMode.Zoom;
+            SettingsButtonText.TabIndex = 5;
+            SettingsButtonText.TabStop = false;
+            SettingsButtonText.MouseEnter += SettingsButtonText_MouseEnter;
+            // 
+            // PlayButton
+            // 
+            PlayButton.BackColor = Color.Transparent;
+            PlayButton.Controls.Add(PlayButtonText);
+            PlayButton.Image = Properties.Resources.MainMenuButton;
+            PlayButton.Location = new Point(132, 170);
+            PlayButton.Name = "PlayButton";
+            PlayButton.Size = new Size(315, 81);
+            PlayButton.SizeMode = PictureBoxSizeMode.Zoom;
+            PlayButton.TabIndex = 1;
+            PlayButton.TabStop = false;
+            PlayButton.Click += PlayButton_Click;
+            PlayButton.MouseEnter += PlayButton_MouseEnter;
+            PlayButton.MouseLeave += PlayButton_MouseLeave;
+            // 
+            // PlayButtonText
+            // 
+            PlayButtonText.BackColor = Color.Transparent;
+            PlayButtonText.Image = Properties.Resources.PlayText;
+            PlayButtonText.Location = new Point(21, 21);
+            PlayButtonText.Name = "PlayButtonText";
+            PlayButtonText.Size = new Size(103, 40);
+            PlayButtonText.SizeMode = PictureBoxSizeMode.Zoom;
+            PlayButtonText.TabIndex = 4;
+            PlayButtonText.TabStop = false;
+            PlayButtonText.MouseEnter += PlayButtonText_MouseEnter;
             // 
             // MainMenu
             // 
@@ -148,12 +161,16 @@ namespace Chess
             Text = "MainMenu";
             ContentPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)MainMenuBackground).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PlayButton).EndInit();
-            ((System.ComponentModel.ISupportInitialize)SettingsButton).EndInit();
+            MainMenuBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)QuitButton).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PlayButtonText).EndInit();
-            ((System.ComponentModel.ISupportInitialize)SettingsButtonText).EndInit();
+            QuitButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)QuitButtonText).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SettingsButton).EndInit();
+            SettingsButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)SettingsButtonText).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PlayButton).EndInit();
+            PlayButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PlayButtonText).EndInit();
             ResumeLayout(false);
         }
 
