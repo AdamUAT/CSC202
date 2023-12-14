@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Moonbase.Properties {
+namespace Chess.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Moonbase.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Moonbase.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Chess.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Admin {
+        internal static System.Drawing.Bitmap MainMenuButton {
             get {
-                object obj = ResourceManager.GetObject("Admin", resourceCulture);
+                object obj = ResourceManager.GetObject("MainMenuButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Airlock {
+        internal static System.Drawing.Bitmap MainMenuScreen {
             get {
-                object obj = ResourceManager.GetObject("Airlock", resourceCulture);
+                object obj = ResourceManager.GetObject("MainMenuScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cabin {
+        internal static System.Drawing.Bitmap PlayText {
             get {
-                object obj = ResourceManager.GetObject("Cabin", resourceCulture);
+                object obj = ResourceManager.GetObject("PlayText", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Maintenance {
+        internal static System.Drawing.Bitmap QuitText {
             get {
-                object obj = ResourceManager.GetObject("Maintenance", resourceCulture);
+                object obj = ResourceManager.GetObject("QuitText", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,66 +103,10 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Moonbase {
+        internal static System.Drawing.Bitmap SettingsText {
             get {
-                object obj = ResourceManager.GetObject("Moonbase", resourceCulture);
+                object obj = ResourceManager.GetObject("SettingsText", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Transparent {
-            get {
-                object obj = ResourceManager.GetObject("Transparent", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Transparent1 {
-            get {
-                object obj = ResourceManager.GetObject("Transparent1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream walk1 {
-            get {
-                return ResourceManager.GetStream("walk1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream walk2 {
-            get {
-                return ResourceManager.GetStream("walk2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream walk3 {
-            get {
-                return ResourceManager.GetStream("walk3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream walk4 {
-            get {
-                return ResourceManager.GetStream("walk4", resourceCulture);
             }
         }
     }

@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Moonbase
+namespace Chess
 {
     internal static class Program
     {
         public static AudioManager audioManager;
 
         /// <summary>
-        /// The main entry point for the application.
+        ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            ApplicationConfiguration.Initialize();
+
             audioManager = new AudioManager();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            updateTimer.Interval = 1000 / framesPerSecond;
+            updateTimer.Start();
+
+            Application.Run(new MainMenu());
         }
 
         /// <summary>
@@ -43,5 +40,9 @@ namespace Moonbase
         /// The ideal aspect ratio of the program. Width:Height
         /// </summary>
         public const float ASPECT_RATIO = 16.0f / 9.0f;
+
+        //A timed update loop
+        public static System.Windows.Forms.Timer updateTimer = new System.Windows.Forms.Timer();
+        private static int framesPerSecond = 60;
     }
 }
