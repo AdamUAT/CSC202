@@ -274,8 +274,9 @@ namespace Chess
 
         private void Play()
         {
-            MessageBox.Show("Play");
-            MessageBox.Show(MainMenuBackground.Width.ToString());
+            Board board = new Board();
+            this.Hide();
+            board.Show();
         }
 
         private void Settings()
