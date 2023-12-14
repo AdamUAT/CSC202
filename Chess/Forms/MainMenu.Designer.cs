@@ -30,6 +30,7 @@ namespace Chess
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             MainMenuBackground = new PictureBox();
             QuitButton = new PictureBox();
             QuitButtonText = new PictureBox();
@@ -37,6 +38,14 @@ namespace Chess
             SettingsButtonText = new PictureBox();
             PlayButton = new PictureBox();
             PlayButtonText = new PictureBox();
+            SettingsBox = new GroupBox();
+            Back = new Button();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            WindowModeButton_Widescreen = new RadioButton();
+            WindowModeButton_Fullscreen = new RadioButton();
+            WindowModeLabel = new Label();
+            WindowModeButton_Windowed = new RadioButton();
             ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MainMenuBackground).BeginInit();
             MainMenuBackground.SuspendLayout();
@@ -49,10 +58,12 @@ namespace Chess
             ((System.ComponentModel.ISupportInitialize)PlayButton).BeginInit();
             PlayButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PlayButtonText).BeginInit();
+            SettingsBox.SuspendLayout();
             SuspendLayout();
             // 
             // ContentPanel
             // 
+            ContentPanel.Controls.Add(SettingsBox);
             ContentPanel.Controls.Add(MainMenuBackground);
             ContentPanel.Location = new Point(0, 0);
             ContentPanel.Size = new Size(800, 450);
@@ -96,6 +107,7 @@ namespace Chess
             QuitButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             QuitButtonText.TabIndex = 6;
             QuitButtonText.TabStop = false;
+            QuitButtonText.Click += QuitButtonText_Click;
             QuitButtonText.MouseEnter += QuitButtonText_MouseEnter;
             // 
             // SettingsButton
@@ -123,6 +135,7 @@ namespace Chess
             SettingsButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             SettingsButtonText.TabIndex = 5;
             SettingsButtonText.TabStop = false;
+            SettingsButtonText.Click += SettingsButtonText_Click;
             SettingsButtonText.MouseEnter += SettingsButtonText_MouseEnter;
             // 
             // PlayButton
@@ -150,7 +163,99 @@ namespace Chess
             PlayButtonText.SizeMode = PictureBoxSizeMode.Zoom;
             PlayButtonText.TabIndex = 4;
             PlayButtonText.TabStop = false;
+            PlayButtonText.Click += PlayButtonText_Click;
             PlayButtonText.MouseEnter += PlayButtonText_MouseEnter;
+            // 
+            // SettingsBox
+            // 
+            SettingsBox.Controls.Add(Back);
+            SettingsBox.Controls.Add(label1);
+            SettingsBox.Controls.Add(textBox1);
+            SettingsBox.Controls.Add(WindowModeButton_Widescreen);
+            SettingsBox.Controls.Add(WindowModeButton_Fullscreen);
+            SettingsBox.Controls.Add(WindowModeLabel);
+            SettingsBox.Controls.Add(WindowModeButton_Windowed);
+            SettingsBox.Dock = DockStyle.Fill;
+            SettingsBox.Location = new Point(0, 0);
+            SettingsBox.Name = "SettingsBox";
+            SettingsBox.Size = new Size(800, 450);
+            SettingsBox.TabIndex = 1;
+            SettingsBox.TabStop = false;
+            SettingsBox.Text = "Settings";
+            // 
+            // Back
+            // 
+            Back.Location = new Point(28, 409);
+            Back.Name = "Back";
+            Back.Size = new Size(94, 29);
+            Back.TabIndex = 6;
+            Back.Text = "Back";
+            Back.UseVisualStyleBackColor = true;
+            Back.Click += Back_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(429, 71);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 20);
+            label1.TabIndex = 5;
+            label1.Text = "How To Play:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(429, 91);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(266, 173);
+            textBox1.TabIndex = 4;
+            textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // WindowModeButton_Widescreen
+            // 
+            WindowModeButton_Widescreen.AutoSize = true;
+            WindowModeButton_Widescreen.Location = new Point(28, 151);
+            WindowModeButton_Widescreen.Name = "WindowModeButton_Widescreen";
+            WindowModeButton_Widescreen.Size = new Size(107, 24);
+            WindowModeButton_Widescreen.TabIndex = 3;
+            WindowModeButton_Widescreen.TabStop = true;
+            WindowModeButton_Widescreen.Text = "Widescreen";
+            WindowModeButton_Widescreen.UseVisualStyleBackColor = true;
+            WindowModeButton_Widescreen.CheckedChanged += WindowModeButton_Widescreen_CheckedChanged;
+            // 
+            // WindowModeButton_Fullscreen
+            // 
+            WindowModeButton_Fullscreen.AutoSize = true;
+            WindowModeButton_Fullscreen.Location = new Point(28, 121);
+            WindowModeButton_Fullscreen.Name = "WindowModeButton_Fullscreen";
+            WindowModeButton_Fullscreen.Size = new Size(95, 24);
+            WindowModeButton_Fullscreen.TabIndex = 2;
+            WindowModeButton_Fullscreen.TabStop = true;
+            WindowModeButton_Fullscreen.Text = "Fullscreen";
+            WindowModeButton_Fullscreen.UseVisualStyleBackColor = true;
+            WindowModeButton_Fullscreen.CheckedChanged += WindowModeButton_Fullscreen_CheckedChanged;
+            // 
+            // WindowModeLabel
+            // 
+            WindowModeLabel.AutoSize = true;
+            WindowModeLabel.Location = new Point(20, 58);
+            WindowModeLabel.Name = "WindowModeLabel";
+            WindowModeLabel.Size = new Size(107, 20);
+            WindowModeLabel.TabIndex = 1;
+            WindowModeLabel.Text = "Window Mode";
+            // 
+            // WindowModeButton_Windowed
+            // 
+            WindowModeButton_Windowed.AutoSize = true;
+            WindowModeButton_Windowed.Location = new Point(28, 91);
+            WindowModeButton_Windowed.Name = "WindowModeButton_Windowed";
+            WindowModeButton_Windowed.Size = new Size(102, 24);
+            WindowModeButton_Windowed.TabIndex = 0;
+            WindowModeButton_Windowed.TabStop = true;
+            WindowModeButton_Windowed.Text = "Windowed";
+            WindowModeButton_Windowed.UseVisualStyleBackColor = true;
+            WindowModeButton_Windowed.CheckedChanged += WindowModeButton_Windowed_CheckedChanged;
             // 
             // MainMenu
             // 
@@ -171,6 +276,8 @@ namespace Chess
             ((System.ComponentModel.ISupportInitialize)PlayButton).EndInit();
             PlayButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PlayButtonText).EndInit();
+            SettingsBox.ResumeLayout(false);
+            SettingsBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -183,5 +290,13 @@ namespace Chess
         private PictureBox PlayButtonText;
         private PictureBox QuitButtonText;
         private PictureBox SettingsButtonText;
+        private GroupBox SettingsBox;
+        private RadioButton WindowModeButton_Windowed;
+        private RadioButton WindowModeButton_Widescreen;
+        private RadioButton WindowModeButton_Fullscreen;
+        private Label WindowModeLabel;
+        private TextBox textBox1;
+        private Label label1;
+        private Button Back;
     }
 }
